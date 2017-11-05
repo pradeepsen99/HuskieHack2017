@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DisasterHandbook.iml" filepath="$PROJECT_DIR$/DisasterHandbook.iml" />
+      <module fileurl="file://C:\Users\prade\Desktop\DisasterHandbook\DisasterHandbook.iml" filepath="C:\Users\prade\Desktop\DisasterHandbook\DisasterHandbook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\prade\Desktop\DisasterHandbook\app\app.iml" filepath="C:\Users\prade\Desktop\DisasterHandbook\app\app.iml" />
+    </modules>
+  </component>
+</project>
