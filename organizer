@@ -1,5 +1,5 @@
 public class organizer(String State)
- {
+{
    //Objective: convert state to two letter abbreviation then count and return top 3 disaster types
    //initializes the types of disasters, for counting
    Int CoastalStorm = 0;
@@ -178,68 +178,70 @@ public class organizer(String State)
     default:
         System.out.println("ERROR");
 }
-   Json_Separator state = New Json_Separator(abv, [where the file will be]); //REPLACE WHERE THE FILE WILL BE
+   Json_Separator state =
+
+	New Json_Separator(abv, [where the file will be]); //REPLACE WHERE THE FILE WILL BE
    String[] Disasters = state.getInstanceType();
 
    //counts the # of each type of disaster
-   public void disasterRate(String[] Disasters) {
-  for (int i = nums.length-1; i>=0; i--) {
-    switch(Disasters[i])
-    {
-      case "Coastal Storm":
-          CoastalStorm++;
-          break;
-      case "Drought":
-          Drought++;
-          break;
-      case "Earthquake":
-          Earthquake++;
-          break;
-      case "Fire":
-          Fire++;
-          break;
-      case "Flood":
-          Flood++;
-          break;
-      case "Freezing":
-          Freezing++;
-          break;
-      case "Hurricane":
-          Hurricane++;
-          break;
-      case "Severe Ice Storm":
-          SevereIceStorm++;
-          break;
-      case "Snow":
-          Snow++;
-          break;
-      case "Severe Storm":
-          SevereStorms++;
-          break;
-      case "Severe Storms":
-          SevereStorms++;
-          break;
-      case "Tornado":
-          Tornado++;
-          break;
-      case "Tsunami":
-          Tsunami++;
-          break;
-      case "Typhoon":
-          Typhoon++;
-          break;
-      case "Volcano":
-          Volcano++;
-          break;
-      case "Wildfire":
-          Wildfire++;
-          break;
-      default:
-          break;
-    }
-  }
-}
-  public String[] returnDisasterRate()
+	public void disasterRate(String[] Disasters) {
+		for (int i = nums.length - 1; i >= 0; i--) {
+			switch (Disasters[i]) {
+			case "Coastal Storm":
+				CoastalStorm++;
+				break;
+			case "Drought":
+				Drought++;
+				break;
+			case "Earthquake":
+				Earthquake++;
+				break;
+			case "Fire":
+				Fire++;
+				break;
+			case "Flood":
+				Flood++;
+				break;
+			case "Freezing":
+				Freezing++;
+				break;
+			case "Hurricane":
+				Hurricane++;
+				break;
+			case "Severe Ice Storm":
+				SevereIceStorm++;
+				break;
+			case "Snow":
+				Snow++;
+				break;
+			case "Severe Storm":
+				SevereStorms++;
+				break;
+			case "Severe Storms":
+				SevereStorms++;
+				break;
+			case "Tornado":
+				Tornado++;
+				break;
+			case "Tsunami":
+				Tsunami++;
+				break;
+			case "Typhoon":
+				Typhoon++;
+				break;
+			case "Volcano":
+				Volcano++;
+				break;
+			case "Wildfire":
+				Wildfire++;
+				break;
+			default:
+				break;
+			}
+		}
+	}
+
+	public String[] returnDisasterRate()
 {
   //this will form an arraylist of the different danger counts
   allDisasters.add(CoastalStorm);
@@ -307,5 +309,4 @@ public class organizer(String State)
     }
     return disasterNames;
   }
- }
-}
+}}
