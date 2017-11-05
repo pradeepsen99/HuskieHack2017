@@ -17,8 +17,8 @@ public class organizer(String State)
    Int Typhoon = 0;
    Int Volcano = 0;
    Int Wildfire = 0;
-   ArrayList<String> top3 = new ArrayList<String>();
-   ArrayList<Int> allDisasters = new ArrayList<Int>();
+   ArrayList<String> top3 = new ArrayList<String>(); //this will store the top 3 most common disasters of an area
+   ArrayList<Int> allDisasters = new ArrayList<Int>(); //this will store the frequency of each disaster of an area for later sorting
    String[] disasterNames = ["Coastal Storm","Drought","Earthquake","Fire","Flood","Freezing","Hurricane","Severe Ice Storm","Snow","Severe Storm","Tornado","Tsunami","Typhoon","Volcano","Wilfire"]
    Int pos = -1
 
@@ -136,7 +136,7 @@ public class organizer(String State)
     case "Oregon":
         abv = "OR";
         break;
-    case "Pennsylvania	":
+    case "Pennsylvania":
         abv = "PA";
         break;
     case "Rhode Island":
@@ -178,13 +178,13 @@ public class organizer(String State)
     default:
         System.out.println("ERROR");
 }
-   Json_Separator state =
-
-	New Json_Separator(abv, [where the file will be]); //REPLACE WHERE THE FILE WILL BE
-   String[] Disasters = state.getInstanceType();
+   //this will import the different reported disasters and count their frequency to establish likelihood / threat level
+   Json_Separator state = New Json_Separator(abv, filename);
+   String[] Disasters = state.getIncidentType();
+   disasterRate();
 
    //counts the # of each type of disaster
-	public void disasterRate(String[] Disasters) {
+	public void disasterRate() {
 		for (int i = nums.length - 1; i >= 0; i--) {
 			switch (Disasters[i]) {
 			case "Coastal Storm":
@@ -239,6 +239,7 @@ public class organizer(String State)
 				break;
 			}
 		}
+  returnDisasterRate()
 	}
 
 	public String[] returnDisasterRate()
@@ -265,10 +266,12 @@ public class organizer(String State)
   Collections.sort(sortedArray);
   Collections.reverse(sortedArray);
   max = sortedArray.get(0); //this returns the max value
+
   //this will find the location of the max int and crossreference to what disaster it is
   for (int counter = 0; counter < allDisasters.size(); counter++) {
       if(allDisasters.get(counter) == max)
-          {pos = counter;
+          {
+           pos = counter;
            break; //break incase array.get(0)==array,get(1)
           }
    }
@@ -282,16 +285,21 @@ public class organizer(String State)
     }
   else() //find the second max
     {
-  sortedArray.remove(0); //removes the previous max just so it doesn't ruin things later
+    if(sortedArray.get(0)==sortedArray.get(1)) //this will prevent duplication of disaster names in top3
+      {
+      allDisasters.set(pos,0); //NOT removing this also allows us to keep the identity of the disaster that the index represents
+      }
+  sortedArray.remove(0); //removes the previous max just so it doesn't interfere
   max = sortedArray.get(0); //gets the new highest value
   for (int counter = 0; counter < allDisasters.size(); counter++) {
       if(allDisasters.get(counter) == max)
-          {pos = counter;
+          {
+           pos = counter;
            break;
           }
    }
   top3.add(disasterNames[pos]);
-    if(sortedArray.get(1)==0)//checks to see if the remaining values are 0
+    if(sortedArray.get(1)==0) //checks to see if the remaining values are 0
       {
       top3.add("");
       }
@@ -300,13 +308,14 @@ public class organizer(String State)
       sortedArray.remove(0)
       for (int counter = 0; counter < allDisasters.size(); counter++) {
           if(allDisasters.get(counter) == max)
-              {pos = counter;
+              {
+               pos = counter;
                break;
               }
         top3.add(disasterNames[pos]);
+        }
        }
       }
-    }
     return disasterNames;
   }
-}}
+}
